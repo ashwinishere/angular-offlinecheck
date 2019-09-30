@@ -2,8 +2,13 @@
   <div style="text-align: center;padding-top:50%">
   <h1 *ngIf="fillBGClass == 'bgGreen'">The Internet is Connected </h1>
   <h1 *ngIf="fillBGClass != 'bgGreen'">The Internet is Disconnected </h1>
+<button (click)="check()" class="btn">Check</button>
 </div>
-<svg  style="text-align: center;" [ngClass]="getColor()" class="width" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<!-- <svg  style="text-align: center;" [ngClass]="getColor()" class="width" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <circle cx="50" cy="50" r="50"/>
-</svg>
+</svg> -->
+
+<div>
+  <p *ngIf="showToast" class="toast scale-in-center">Checked !!</p>
+   </div>
 </div>

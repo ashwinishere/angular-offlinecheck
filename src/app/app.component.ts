@@ -9,11 +9,11 @@ import { map} from 'rxjs/operators';
 export class AppComponent  {
   fillColorClass: string;
   fillBGClass: string;
+  showToast = false;
   constructor() {
 this.createOnline$().subscribe( (eve) => {
   this.fillColorClass = eve ? 'fillGreen' :  'fillRed';
   this.fillBGClass = eve ? 'bgGreen' :  'bgRed';
-  console.log(eve,this.fillColorClass);
 });
   }
   name = 'Angular';
@@ -31,5 +31,12 @@ getBGColor() {
         sub.next(navigator.onLine);
         sub.complete();
       }));
+  }
+  check() {
+    console.log(navigator.onLine);
+this.showToast =true;    
+    setTimeout(() => {
+this.showToast =false;
+    },1000)
   }
 }
