@@ -8,15 +8,20 @@ import { map} from 'rxjs/operators';
 })
 export class AppComponent  {
   fillColorClass: string;
+  fillBGClass: string;
   constructor() {
 this.createOnline$().subscribe( (eve) => {
   this.fillColorClass = eve ? 'fillGreen' :  'fillRed';
+  this.fillBGClass = eve ? 'bgGreen' :  'bgRed';
   console.log(eve,this.fillColorClass);
 });
   }
   name = 'Angular';
 getColor() {
   return this.fillColorClass;
+}
+getBGColor() {
+  return this.fillBGClass;
 }
   createOnline$() {
     return merge<boolean>(
